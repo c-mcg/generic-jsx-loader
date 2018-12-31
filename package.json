@@ -1,0 +1,22 @@
+
+  "name": "generic-jsx-loader",
+  "version": "0.0.1",
+  "description": "A webpack loader for loading custom JSX",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-mcg/generic-jsx-loader.git"
+  },
+  "keywords": [
+    "react",
+    "jsx",
+    "transpile",
+    "webpack",
+    "loader"
+  ],
+  "author": "Connor McGrogan",
+  "license": "ISC"
+}
