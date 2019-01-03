@@ -15,8 +15,6 @@ export default function loader(source) {
 
     // validateOptions(schema, options, 'Generic JSX Loader');
 
-
-
     if (!options.serialize) {
         throw new Error("You must provide a serialize function as an option!");
     }
