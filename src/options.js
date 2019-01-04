@@ -1,6 +1,20 @@
 
 export default {
-    // "additionalProperties": true,
+    type: 'object',
+    properties: {
+        serialize: {
+            instanceof: 'Function'
+        },
+    },
+    errorMessage: {},
+    additionalProperties: false,
+/***********************************/
+/***********************************/
+// Copied from https://github.com
+//   /webpack-contrib/file-loader
+// for reference while developing!
+/***********************************/
+/***********************************/
     // "properties": {
     //     "name": {
     //         "anyOf": [
@@ -49,13 +63,7 @@ export default {
     //         ]
     //     }
     // },
-    // "errorMessages": {
-    //     "name": "should be {String} or {Function} (https://github.com/webpack-contrib/file-loader#name)",
-    //     "outputPath": "should be {String} or {Function} (https://github.com/webpack-contrib/file-loader#outputpath)",
+
+    // Error messages
     //     "publicPath": "should be {String} or {Function} (https://github.com/webpack-contrib/file-loader#publicpath)",
-    //     "context": "should be {String} (https://github.com/webpack-contrib/file-loader#context)",
-    //     "emitFile": "should be {Boolean} (https://github.com/webpack-contrib/file-loader#emitfile)",
-    //     "regExp": "should be {String} or {RegExp} (https://github.com/webpack-contrib/file-loader#regexp)"
-    // },
-    // "type": "object"
 };
