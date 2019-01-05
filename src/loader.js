@@ -1,10 +1,10 @@
 // import path from 'path';
 import loaderUtils from 'loader-utils';
-// import validateOptions from 'schema-utils';
+import validateOptions from 'schema-utils';
 
-// import { Parser } from 'generic-jsx-transpiler';
+import { Parser } from 'generic-jsx-transpiler';
 
-// import schema from './options.json';
+import schema from './options.js';
 
 export default function loader(source) {
     if (!source) {
@@ -13,15 +13,12 @@ export default function loader(source) {
 
     const options = loaderUtils.getOptions(this) || {};
 
-    // validateOptions(schema, options, 'Generic JSX Loader');
+    validateOptions(schema, options, 'Generic JSX Loader');
 
-    if (!options.serialize) {
+    if (!options.serialize || !(options.serialize instanceof Function) ) {
         throw new Error("You must provide a serialize function as an option!");
     }
 
-    // const {
-    //     serialize
-    // } = options;
-
-    return source;
+    const parser = new Parser({ ...options });
+    return parser.parse({ source }); //TODO support inputPath & outputPath
 }

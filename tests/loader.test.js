@@ -1,14 +1,24 @@
-// #global jest
 import loaderUtils from 'loader-utils';
+import * as genericJsx from 'generic-jsx-transpiler';
 
 import loader from "../src/loader";
+
+const oldParser = genericJsx.default.Parser;
+var Parser = jest.fn();
+
+const mockParse = jest.fn();
+Parser.mockImplementation(() => {
+    return { parse: mockParse };
+});
+
+genericJsx.default.Parser = Parser;
 
 describe("generic-jsx-loader", () => {
 
     const oldGetOptions = loaderUtils.getOptions;
+    const options = { serialize: () => {} };
 
     beforeAll(() => {
-        const options = { serialize: () => {} };
         loaderUtils.getOptions = jest.fn().mockReturnValue(options);
     });
 
@@ -18,6 +28,7 @@ describe("generic-jsx-loader", () => {
 
     afterAll(() => {
         loaderUtils.getOptions = oldGetOptions;
+        genericJsx.default.Parser = oldParser;
     });
 
     it("requires a serialize option", () => {
@@ -26,12 +37,17 @@ describe("generic-jsx-loader", () => {
         expect(loaderUtils.getOptions).toHaveBeenCalled();
     });
 
-    it('', () => {
+    it('parses the source', () => {
+        const source = "test";
+        
+        loader(source);
 
+        expect(Parser).toBeCalledWith({ ...options });
+        expect(mockParse).toBeCalledWith({ source });
     });
 
 });
 
-function callLoaderWithSource() {
-    return loader("test");
+function callLoaderWithSource(otherParams=[]) {
+    return loader("test", ...otherParams);
 }
