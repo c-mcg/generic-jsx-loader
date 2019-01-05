@@ -13,7 +13,6 @@ describe('options', () => {
         expect(options).toHaveProperty('additionalProperties', false);
     });
 
-    // Skip for now because it will fail l8er
     it('has an error message for every property', () => {
         const {
             properties,
