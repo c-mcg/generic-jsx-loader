@@ -16,7 +16,7 @@ genericJsx.default.Parser = Parser;
 describe("generic-jsx-loader", () => {
 
     const oldGetOptions = loaderUtils.getOptions;
-    const options = { serialize: () => {} };
+    const options = { serialize: jest.fn() };
 
     beforeAll(() => {
         loaderUtils.getOptions = jest.fn().mockReturnValue(options);
