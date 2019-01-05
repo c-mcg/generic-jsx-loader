@@ -20,7 +20,7 @@ describe('options', () => {
         } = options;
         const handledErrors =  Object.keys(errorMessage);
         const propertiesWithoutMessage = Object.keys(properties)
-            .filter(propName => handledErrors.includes(propName));
+            .filter(name => !handledErrors.includes(name));
         
         expect(propertiesWithoutMessage)
             .toHaveLength(0);
