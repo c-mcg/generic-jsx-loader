@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint",
-    "build": "babel src -d dist"
+    "build": "babel src -d dist",
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,8 @@
     "eslint": "^5.11.1",
     "generic-jsx-transpiler": "^0.9.5",
     "jest": "^23.6.0",
-    "webpack": "^4.28.3"
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0"
   },
   "dependencies": {
     "loader-utils": "^1.2.3",
