@@ -49,16 +49,12 @@ module.exports = {
         rules: [
             {
                 test: /\.gjsx$/, //Replace this with any file extension including .js
-                use: [
-                    {
-                        loader: path.resolve('generic-jsx-transpiler'),
-                        options: {
-                            serialize: function(component) {
-                                return "'JSX_REPLACEMENT'[";
-                            }
-                        }
+                loader: 'jsx-hyperscript-loader',
+                options: {
+                    serialize: function(component) {
+                        return "'JSX_REPLACEMENT'[";
                     }
-                ]
+                }
             }
         ]
     }
