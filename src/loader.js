@@ -13,8 +13,6 @@ function loader(source) {
 
     const options = loaderUtils.getOptions(this) || {};
 
-    console.log(options);
-
     validateOptions(schema, options, 'Generic JSX Loader');
 
     if (!options.serialize || !(options.serialize instanceof Function) ) {
