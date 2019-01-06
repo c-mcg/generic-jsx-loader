@@ -2,7 +2,7 @@
 
 A webpack loader for custom JSX
 
-# Setup
+## Setup
 
 Coming soon!
 
