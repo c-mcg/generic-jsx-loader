@@ -12,21 +12,24 @@ This is a simple wrapper for [generic-jsx-tranpiler](https://www.npmjs.com/packa
 
 webpack.config.js:
 ```
-module: {
-    rules: [
-        {
-            test: /\.gjsx$/, //Replace this with any file extension including .js
-            use: [
-                {
-                    loader: path.resolve(__dirname, '../../index.js'),
-                    options: {
-                        serialize: function() {
-                            return jsxReplacement;
+module.exports = {
+    ...
+    module: {
+        rules: [
+            {
+                test: /\.gjsx$/, //Replace this with any file extension including .js
+                use: [
+                    {
+                        loader: path.resolve(__dirname, '../../index.js'),
+                        options: {
+                            serialize: function() {
+                                return jsxReplacement;
+                            }
                         }
                     }
-                }
-            ]
-        }
-    ]
+                ]
+            }
+        ]
+    }
 }
 ```
