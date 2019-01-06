@@ -19,8 +19,10 @@ function loader(source) {
         throw new Error("You must provide a serialize function as an option! (generic-jsx-loader)");
     }
 
-    const parser = new Parser({ ...options });
+    const { serialize } = options;
+    const serializer = { serialize };
+    const parser = new Parser({ serializer });
     return parser.parse({ source }); //TODO support inputPath & outputPath
 }
 
-export default loader.bind(loader)
+export default loader;
