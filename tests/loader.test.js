@@ -39,6 +39,19 @@ describe("loader", () => {
         expect(loaderUtils.getOptions).toHaveBeenCalled();
     });
 
+    it("passes all options to Parser constructor", () => {
+        const optionsWithCreateImport = {
+            ...defaultOptions,
+            createImports: () => "import 'test'",
+            test: 'works',
+        };
+        loaderUtils.getOptions.mockReturnValueOnce(optionsWithCreateImport);
+
+        callLoaderWithSource();
+
+        expect(Parser).toBeCalledWith({ serializer: optionsWithCreateImport });
+    });
+
     it('parses the source', () => {
         const source = "test";
         
