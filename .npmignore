@@ -1,6 +1,7 @@
 src
 .vscode
 tests
+.travis.yml
 .babelrc
 .eslintrc
 .gitignore
