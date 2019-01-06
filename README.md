@@ -1,4 +1,4 @@
-# generic-jsx-loader
+# generic-jsx-loader [![npm version](https://badge.fury.io/js/generic-jsx-loader.svg)](https://badge.fury.io/js/generic-jsx-loader) [![Build Status](https://travis-ci.org/nik-m2/generic-jsx-loader.svg?branch=master)](https://travis-ci.org/nik-m2/generic-jsx-loader)
 
 A webpack loader for custom JSX. Can be used to represent custom data as raw XML inside JavaScript code.
 
@@ -6,7 +6,9 @@ This is a simple wrapper for [generic-jsx-tranpiler](https://www.npmjs.com/packa
 
 ## How can this be used?
 
-This can be used to use JSX to turn XML inside JavaScript into any type of data. React transforms JSX into `React.createElement` function calls. This package can be used to easily transform raw XML in JavaScript (JSX) into custom data such as custom function calls, JSON, or other JS code/data.  
+This can be used to use JSX to turn XML inside JavaScript into any type of data. React transforms JSX into `React.createElement` function calls. This package can be used to easily transform raw XML in JavaScript (JSX) into custom data such as custom function calls, JSON, or other JS code/data.
+
+[React Without JSX](https://reactjs.org/docs/react-without-jsx.html)
 
 ## Setup
 
