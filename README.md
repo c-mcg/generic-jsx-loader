@@ -6,9 +6,7 @@ This is a simple wrapper for [generic-jsx-tranpiler](https://www.npmjs.com/packa
 
 ## How can this be used?
 
-This can be used to use JSX to turn XML inside JavaScript into any type of data. React transforms JSX into `React.createElement` function calls. This package can be used to easily transform raw XML in JavaScript (JSX) into custom data such as custom function calls, JSON, or other JS code/data.
-
-[React Without JSX](https://reactjs.org/docs/react-without-jsx.html)
+This can be used to use JSX to turn XML inside JavaScript into any type of data. For example React transforms JSX into raw JavaScript function calls `React.createElement` function calls ([React Without JSX](https://reactjs.org/docs/react-without-jsx.html)). This package can be used to easily transform raw XML in JavaScript (JSX) into custom data such as custom function calls, JSON, or other JS code/data.
 
 ## Setup
 
