@@ -26,11 +26,20 @@ describe('options', () => {
             .toHaveLength(0);
     });
 
-    it('has a serialize "property" that is a function', () => {
+    it('has a serialize property that is a function', () => {
         const { properties } = options;
 
         expect(properties)
             .toHaveProperty('serialize', {
+                instanceof: 'Function',
+            });
+    });
+
+    it('has a createImports property that is a function', () => {
+        const { properties } = options;
+
+        expect(properties)
+            .toHaveProperty('createImports', {
                 instanceof: 'Function',
             });
     });
