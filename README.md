@@ -12,7 +12,8 @@ This can be used to use JSX to turn XML inside JavaScript into any type of data.
 
 `npm install generic-jsx-transpiler`
 
-## To create your own JSX loader:
+## Usage
+### In your own JSX webpack loader
 
 [Writing a Loader](https://webpack.js.org/contribute/writing-a-loader/)
 ```
@@ -26,12 +27,17 @@ function serialize(component) {
 }
 
 export default function loader(source) {
-    const parser = new Parser({ serializer: { serialize } });
-    return parser.parser({ source });
+    const options = {
+        serialize,
+        // All options are passed to generic-jsx-transpiler
+        //      new Parser({ serializer: options });
+    };
+    
+    return genericJsxLoader(source, options);
 }
 ```
 
-## Use for single project
+### In a single project
 
 To use this generic loader in a single project add it to `webpack.config.js`:
 ```
