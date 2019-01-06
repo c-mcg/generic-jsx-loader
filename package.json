@@ -31,7 +31,8 @@
     "babel-loader": "^8.0.4",
     "eslint": "^5.11.1",
     "generic-jsx-transpiler": "^0.9.5",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "webpack": "^4.28.3"
   },
   "dependencies": {
     "loader-utils": "^1.2.3",
