@@ -16,6 +16,8 @@ This can be used to use JSX to turn XML inside JavaScript into any type of data.
 ### In your own JSX webpack loader
 
 [Writing a Loader](https://webpack.js.org/contribute/writing-a-loader/)
+
+I have created a [HyperScript loader](https://www.npmjs.com/package/jsx-hyperscript-loader)
 ```
 import genericJsxloader from 'generic-jsx-loader'
 
