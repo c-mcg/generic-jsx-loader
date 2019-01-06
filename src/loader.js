@@ -16,7 +16,7 @@ function loader(source) {
     validateOptions(schema, options, 'Generic JSX Loader');
 
     if (!options.serialize || !(options.serialize instanceof Function) ) {
-        throw new Error("You must provide a serialize function as an option!");
+        throw new Error("You must provide a serialize function as an option! (generic-jsx-loader)");
     }
 
     const parser = new Parser({ ...options });
