@@ -45,7 +45,7 @@ describe("loader", () => {
         loader(source);
 
         expect(validateOptions).toBeCalledWith(expect.any(Object), defaultOptions, 'Generic JSX Loader');
-        expect(Parser).toBeCalledWith(defaultOptions);
+        expect(Parser).toBeCalledWith({ serializer: defaultOptions });
         expect(mockParse).toBeCalledWith({ source });
     });
 
