@@ -13,7 +13,7 @@ Parser.mockImplementation(() => {
 
 genericJsx.default.Parser = Parser;
 
-describe("generic-jsx-loader", () => {
+describe("loader", () => {
 
     const oldGetOptions = loaderUtils.getOptions;
     const options = { serialize: jest.fn() };

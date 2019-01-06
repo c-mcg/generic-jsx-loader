@@ -6,12 +6,14 @@ import { Parser } from 'generic-jsx-transpiler';
 
 import schema from './options.js';
 
-export default function loader(source) {
+function loader(source) {
     if (!source) {
         return "";
     }
 
     const options = loaderUtils.getOptions(this) || {};
+
+    console.log(options);
 
     validateOptions(schema, options, 'Generic JSX Loader');
 
@@ -22,3 +24,5 @@ export default function loader(source) {
     const parser = new Parser({ ...options });
     return parser.parse({ source }); //TODO support inputPath & outputPath
 }
+
+export default loader.bind(loader)
