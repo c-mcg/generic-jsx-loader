@@ -8,7 +8,9 @@ This is a simple wrapper for [generic-jsx-tranpiler](https://www.npmjs.com/packa
 
 `npm install generic-jsx-transpiler`
 
-## To create your own jsx loader:
+## To create your own JSX loader:
+
+[Writing a Loader](https://webpack.js.org/contribute/writing-a-loader/)
 ```
 import genericJsxloader from 'generic-jsx-loader
 
