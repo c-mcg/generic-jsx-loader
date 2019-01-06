@@ -12,7 +12,7 @@ This is a simple wrapper for [generic-jsx-tranpiler](https://www.npmjs.com/packa
 
 [Writing a Loader](https://webpack.js.org/contribute/writing-a-loader/)
 ```
-import genericJsxloader from 'generic-jsx-loader
+import genericJsxloader from 'generic-jsx-loader'
 
 function serialize(component) {
     // This is where you can do custom transformations on the JSX
