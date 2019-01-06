@@ -1,26 +1,28 @@
 import loaderUtils from 'loader-utils';
+import validateOptions from 'schema-utils';
 import * as genericJsx from 'generic-jsx-transpiler';
 
 import loader from "../src/loader";
 
+jest.mock('schema-utils');
+
+// This mock had to be wrapped because `jest.fn() instanceof Function === false`
+const mockSerialize = jest.fn();
+const defaultOptions = { serialize: (...args) => mockSerialize(...args) };
+loaderUtils.getOptions = jest.fn().mockReturnValue(defaultOptions);
+
+// Took some hacks to properly mock Parser (code smell...)
 const oldParser = genericJsx.default.Parser;
 var Parser = jest.fn();
-
 const mockParse = jest.fn();
 Parser.mockImplementation(() => {
     return { parse: mockParse };
 });
-
 genericJsx.default.Parser = Parser;
 
 describe("loader", () => {
 
     const oldGetOptions = loaderUtils.getOptions;
-    const options = { serialize: jest.fn() };
-
-    beforeAll(() => {
-        loaderUtils.getOptions = jest.fn().mockReturnValue(options);
-    });
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -42,7 +44,8 @@ describe("loader", () => {
         
         loader(source);
 
-        expect(Parser).toBeCalledWith({ ...options });
+        expect(validateOptions).toBeCalledWith(expect.any(Object), defaultOptions, 'Generic JSX Loader');
+        expect(Parser).toBeCalledWith(defaultOptions);
         expect(mockParse).toBeCalledWith({ source });
     });
 
