@@ -27,8 +27,13 @@ function serialize(component) {
 }
 
 export default function loader(source) {
-    const parser = new Parser({ serializer: { serialize } });
-    return parser.parser({ source });
+    const options = {
+        serialize,
+        // All options are passed to generic-jsx-transpiler
+        //      new Parser({ serializer: options });
+    };
+    
+    return genericJsxLoader(source, options);
 }
 ```
 
