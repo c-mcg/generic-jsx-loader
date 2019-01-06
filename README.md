@@ -20,7 +20,7 @@ module.exports = {
                 test: /\.gjsx$/, //Replace this with any file extension including .js
                 use: [
                     {
-                        loader: path.resolve(__dirname, '../../index.js'),
+                        loader: path.resolve('generic-jsx-transpiler'),
                         options: {
                             serialize: function() {
                                 return jsxReplacement;
