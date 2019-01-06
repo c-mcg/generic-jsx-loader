@@ -18,6 +18,7 @@
     "eol-last": ["error", "always"]
   },
   "env": {
-    "jest": true
+    "jest": true,
+    "node": true
   }
 }
