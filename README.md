@@ -20,7 +20,7 @@ import genericJsxloader from 'generic-jsx-loader'
 
 function serialize(component) {
     // This is where you can do custom transformations on the JSX
-    //      'component' is a JS object with information on parsed JSX
+    //      'component' is a JS object with information on parsed XML
     // This function should return a string containing valid javascript code
     return "'JSX_REPLACEMENT'";
 }
