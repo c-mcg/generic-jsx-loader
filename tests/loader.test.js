@@ -39,6 +39,19 @@ describe("loader", () => {
         expect(loaderUtils.getOptions).toHaveBeenCalled();
     });
 
+    it('accepts custom options through JS', () => {
+        const options = { test: 1 };
+
+        callLoaderWithSource(options);
+
+        expect(Parser).toBeCalledWith({
+            serializer: {
+                ...options,
+                ...defaultOptions,
+            }
+        });
+    });
+
     it("passes all options to Parser constructor", () => {
         const optionsWithCreateImport = {
             ...defaultOptions,
@@ -64,6 +77,6 @@ describe("loader", () => {
 
 });
 
-function callLoaderWithSource(otherParams=[]) {
-    return loader("test", ...otherParams);
+function callLoaderWithSource(options={}) {
+    return loader("test", options);
 }

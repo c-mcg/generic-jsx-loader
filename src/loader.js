@@ -6,12 +6,15 @@ import { Parser } from 'generic-jsx-transpiler';
 
 import schema from './options.js';
 
-function loader(source) {
+function loader(source, options={}) {
     if (!source) {
         return "";
     }
 
-    const options = loaderUtils.getOptions(this) || {};
+    options = {
+        ...options,
+        ...loaderUtils.getOptions(this) || {},
+    };
 
     validateOptions(schema, options, 'Generic JSX Loader');
 
