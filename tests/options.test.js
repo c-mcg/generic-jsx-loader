@@ -10,7 +10,7 @@ describe('options', () => {
         expect(options).toHaveProperty('type', 'object');
         expect(options).toHaveProperty('properties', expect.any(Object));
         expect(options).toHaveProperty('errorMessage', expect.any(Object));
-        expect(options).toHaveProperty('additionalProperties', false);
+        expect(options).toHaveProperty('additionalProperties', true);
     });
 
     it('has an error message for every property', () => {
