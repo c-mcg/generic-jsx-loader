@@ -31,12 +31,12 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "eslint": "^5.11.1",
-    "generic-jsx-transpiler": "^0.9.5",
     "jest": "^23.6.0",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.0"
   },
   "dependencies": {
+    "generic-jsx-transpiler": "^0.9.8",
     "loader-utils": "^1.2.3",
     "schema-utils": "^1.0.0"
   }
