@@ -33,7 +33,7 @@
     "webpack": "^4.28.3"
   },
   "dependencies": {
-    "generic-jsx-transpiler": "^0.9.8",
+    "generic-jsx-transpiler": "^0.9.9",
     "loader-utils": "^1.2.3",
     "schema-utils": "^1.0.0"
   }
