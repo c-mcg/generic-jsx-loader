@@ -11,10 +11,9 @@ function loader(source, options={}) {
         return "";
     }
 
-    options = {
-        ...options,
-        ...loaderUtils.getOptions(this) || {},
-    };
+    if (!options || !options.serialize) {
+        options = loaderUtils.getOptions(this) || {};
+    }
 
     validateOptions(schema, options, 'Generic JSX Loader');
 

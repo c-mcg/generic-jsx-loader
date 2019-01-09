@@ -40,16 +40,11 @@ describe("loader", () => {
     });
 
     it('accepts custom options through JS', () => {
-        const options = { test: 1 };
+        const options = { serialize: () => {} };
 
         callLoaderWithSource(options);
 
-        expect(Parser).toBeCalledWith({
-            serializer: {
-                ...options,
-                ...defaultOptions,
-            }
-        });
+        expect(Parser).toBeCalledWith({ serializer: options });
     });
 
     it("passes all options to Parser constructor", () => {
