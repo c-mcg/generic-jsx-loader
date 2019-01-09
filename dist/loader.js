@@ -26,7 +26,10 @@ function loader(source) {
     return "";
   }
 
-  options = _objectSpread({}, options, _loaderUtils.default.getOptions(this) || {});
+  if (!options || !options.serialize) {
+    options = _loaderUtils.default.getOptions(this) || {};
+  }
+
   (0, _schemaUtils.default)(_options.default, options, 'Generic JSX Loader');
 
   if (!options.serialize || !(options.serialize instanceof Function)) {
