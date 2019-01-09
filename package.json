@@ -1,6 +1,6 @@
 {
   "name": "generic-jsx-loader",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "A webpack loader for loading custom JSX",
   "main": "index.js",
   "scripts": {
